@@ -1,0 +1,7 @@
+Photosensor	KEYWORD1
+getLuminosity	KEYWORD2
+getState	KEYWORD2
+getLastState	KEYWORD2
+setBrightLevel	KEYWORD2
+setDarkLevel	KEYWORD2
+echoLuminosityBy	KEYWORD2
