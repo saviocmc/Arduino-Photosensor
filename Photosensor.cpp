@@ -9,15 +9,15 @@ Photosensor::Photosensor(byte sensorPin, int brightLevel, int darkLevel){
 	lumState = getState();
 }
 
-int Photosensor::getLuminosity(){
-	return analogRead(pin);
-}
-
 bool Photosensor::getLastState(){
 	return lumLastState;
 }
 
-#ifdef PHOTOSENSOR_GND
+#ifdef PHOTOSENSOR_TO_GND
+
+int Photosensor::getLuminosity(){
+	return (1024 - analogRead(pin));
+}
 
 bool Photosensor::getState(){
 	lumLastState = lumState;
@@ -29,7 +29,11 @@ bool Photosensor::getState(){
 
 #endif
 
-#ifdef PHOTOSENSOR_5V
+#ifdef PHOTOSENSOR_TO_5V
+
+int Photosensor::getLuminosity(){
+	return analogRead(pin);
+}
 
 bool Photosensor::getState(){
 	lumLastState = lumState;
