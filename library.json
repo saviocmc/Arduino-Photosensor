@@ -1,5 +1,5 @@
 {
-	"name": "Photosensor",
+	"name": "Arduino-Photosensor",
 	"version": "1.0",
 	"keywords": "light dependent resistor,ldr,light-resistor,photoresistor,photosensor,photoelectric",
 	"description": "A class that takes care of reading and interpreting a Light-Dependent Resistor (LDR) - or Photoresistor - giving usable both digital and analog information about the ambient luminosty.",
