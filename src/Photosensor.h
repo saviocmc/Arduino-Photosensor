@@ -22,14 +22,8 @@
 * It gives usable both digital and analog information about the ambient luminosty.
 * As well it saves and compares data from different readings to provide information about changes in ambient luminosity.
 */
-class Photosensor{
-	byte pin;
-	int lum;
-	bool lumState;
-	bool lumLastState;
-	int brightLevel;
-	int darkLevel;
-	
+class Photosensor {
+
 public:
 	Photosensor(byte sensorPin, int brightLevel, int darkLevel);
 	int getLuminosity();
@@ -38,10 +32,13 @@ public:
 	void setBrightLevel(int brightLevel);
 	void setDarkLevel(int darkLevel);
 
-	//TODO: Need Implementation
-	bool hadStateChange();
-	bool hadBrightToDarkChange();
-	bool hadDarkToBrightChange();
+private:
+	byte pin;
+	int lum;
+	bool lumState;
+	bool lumLastState;
+	int brightLevel;
+	int darkLevel;
 };
 
 #endif
