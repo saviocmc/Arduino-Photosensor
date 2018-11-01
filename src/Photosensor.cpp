@@ -28,11 +28,11 @@ bool Photosensor::getState(){
 	lumLastState = lumState;
 	lum = analogRead(pin);
 	if (LDRtoGround) {
-		if(lum < brightLevel) lumState = 1;
-		else if(lum > darkLevel) lumState = 0;
+		if(lum < brightLevel) lumState = BRIGHT;
+		else if(lum > darkLevel) lumState = DARK;
 	} else {
-		if(lum > brightLevel) lumState = 1;
-		else if(lum < darkLevel) lumState = 0;
+		if(lum > brightLevel) lumState = BRIGHT;
+		else if(lum < darkLevel) lumState = DARK;
 	}
 	return lumState;
 }
