@@ -12,9 +12,6 @@
 * Leave the correct #define below depending on how did you connect the sensor on your circuit.
 */
 
-#define PHOTOSENSOR_TO_GND
-//#define PHOTOSENSOR_TO_5V
-
 #include "Arduino.h"
 
 /**
@@ -25,7 +22,8 @@
 class Photosensor {
 
 public:
-	Photosensor(byte sensorPin, int brightLevel, int darkLevel);
+	Photosensor(byte sensorPin, int brightLevel, int darkLevel,
+		bool LDRtoGround = true);
 	int getLuminosity();
 	bool getState();
 	bool getLastState();
@@ -34,6 +32,7 @@ public:
 
 private:
 	byte pin;
+	bool LDRtoGround;
 	int lum;
 	bool lumState;
 	bool lumLastState;
